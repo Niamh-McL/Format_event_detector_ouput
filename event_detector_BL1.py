@@ -40,9 +40,8 @@ for index in range(len(SWD_events)):
 
 SWD_events_BL1 = pd.DataFrame(SWD_events_BL1)
 
-SWD_events_BL1['start_sec'] = SWD_events_BL1['start_sec']-startSec
-
-SWD_events_BL1['end_sec'] = SWD_events_BL1['end_sec']-startSec
+SWD_events_BL1['start_sec'] -= startSec
+SWD_events_BL1['end_sec'] -= startSec
 
 SWD_events_BL1_round = SWD_events_BL1.round(1)
 
