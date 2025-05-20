@@ -45,10 +45,7 @@ SWD_events_BL1['end_sec'] -= startSec
 
 SWD_events_BL1_round = SWD_events_BL1.round(1)
 
-save_folder = "C:\\Users\\niamh\\OneDrive\\Desktop\\Analysis\\EEG\\SWD_Sleep_Analysis\\EventDetector\\SCN2A\\SCN2A_381"
-
-save_path = f'{save_folder}\\{rat}_24h_reformatted_file.csv'
+save_folder = "/home/paul/Desktop/scientific_programming/csv_example/"
+save_path = f'{save_folder}/{rat}_24h_reformatted_file.csv'
 SWD_events_BL1_round .to_csv(save_path, index=False)
-
-#SWD_events_BL1.to_csv(rat,"_SWD_events_BL1.csv", index=False)
 
