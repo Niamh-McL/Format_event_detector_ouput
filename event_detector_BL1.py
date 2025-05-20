@@ -29,12 +29,9 @@ SWD_events_path="/home/paul/Desktop/scientific_programming/csv_example/events_SC
 SWD_events = pd.read_csv(SWD_events_path, delimiter=",", header=None)
 
 SWD_events.rename(columns={0: 'start_sec', 1:'end_sec'}, inplace=True)
+
+SWD_events['duration'] = SWD_events['end_sec'] - SWD_events['start_sec']
 SWD_events = SWD_events.round(1)
-
-
-SWD_events['dur'] = SWD_events['end_sec'] - SWD_events['start_sec'].round(1)
-SWD_events = SWD_events[['start_sec', 'end_sec', 'dur']]
-
 
 SWD_events_BL1 = []
 for index in range(len(SWD_events)):
