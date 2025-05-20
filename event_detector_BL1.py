@@ -37,10 +37,8 @@ SWD_events_BL1 = []
 for index in range(len(SWD_events)):
     if (SWD_events.iloc[index, 0] > startSec) &  (SWD_events.iloc[index, 1] < endSec):
         SWD_events_BL1.append(SWD_events.iloc[index, :])
-    else:
-        continue
 
-SWD_events_BL1 = pd.DataFrame(SWD_events_BL1, columns=['start_sec', 'end_sec', 'dur'])
+SWD_events_BL1 = pd.DataFrame(SWD_events_BL1)
 
 SWD_events_BL1['start_sec'] = SWD_events_BL1['start_sec']-startSec
 
