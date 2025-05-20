@@ -23,7 +23,7 @@ print(startSec)
 print(endSec)
 
 "To load the data, put file location and name below using double back to front slash"
-SWD_events_path="C:\\Users\\niamh\\OneDrive\\Desktop\\Analysis\\EEG\\SWD_Sleep_Analysis\\EventDetector\\SCN2A\\SCN2A_381\\intervals_events_TAINI_1047_B_SCN2A_381_SOM1_HELMET-2023_10_16-0000.csv"
+SWD_events_path="/home/paul/Desktop/scientific_programming/csv_example/events_SCN2A_381.csv"
 
 # Load SWD events from .csv
 SWD_events = pd.read_csv(SWD_events_path, delimiter=",", header=None)
