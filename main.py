@@ -5,25 +5,19 @@ Created on Thu May  2 14:22:03 2024
 @author: niamh
 """
 
-import numpy as np 
 import pandas as pd
 
+from params import rat, sample_rate, startIndex, endIndex, SWD_events_path, save_folder
+
 #only selecting events in the 24 hours of interest
-rat = 381
 
-sample_rate = 250.4
-
-startIndex = 12214513
-endIndex = 33849072
-
-startSec = startIndex/sample_rate
-endSec = endIndex/sample_rate
+startSec = startIndex / sample_rate
+endSec = endIndex / sample_rate
 
 print(startSec)
 print(endSec)
 
 "To load the data, put file location and name below using double back to front slash"
-SWD_events_path="/home/paul/Desktop/scientific_programming/csv_example/events_SCN2A_381.csv"
 
 # Load SWD events from .csv
 SWD_events = pd.read_csv(SWD_events_path, delimiter=",", header=None)
@@ -45,7 +39,6 @@ SWD_events_BL1['end_sec'] -= startSec
 
 SWD_events_BL1_round = SWD_events_BL1.round(1)
 
-save_folder = "/home/paul/Desktop/scientific_programming/csv_example/"
 save_path = f'{save_folder}/{rat}_24h_reformatted_file.csv'
 SWD_events_BL1_round .to_csv(save_path, index=False)
 
